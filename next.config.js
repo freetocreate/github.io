@@ -6,7 +6,7 @@ const nextConfig = {
 
 module.exports = nextConfig
 module.exports = {
-  
+  repository: 'github.io',
   
 };
 
