@@ -1,12 +1,12 @@
 {
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/api/hello": "pages/api/hello.js",
   "/": "pages/index.html",
   "/page/ChatGPTMobile": "pages/page/ChatGPTMobile.html",
   "/page/DemaList": "pages/page/DemaList.html",
   "/page/EnglishOther": "pages/page/EnglishOther.html",
-  "/_error": "pages/_error.js",
   "/page/EssayOutline": "pages/page/EssayOutline.html",
   "/page/ExplainCode": "pages/page/ExplainCode.html",
   "/page/FriendChat": "pages/page/FriendChat.html",

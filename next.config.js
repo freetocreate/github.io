@@ -5,6 +5,9 @@ const nextConfig = {
   basePath: '/github.io',
   experimental: {
     appDir: true,
+  },
+  images: {
+    unoptimized: true,
   }
 }
 
