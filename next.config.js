@@ -4,3 +4,9 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+module.exports = {
+  basePath: '/github.io',
+  assetPrefix: '/github.io/',
+  // Rest of your configuration...
+};
+
