@@ -26,6 +26,7 @@ export default function Home() {
               className="dark:invert"
               width={100}
               height={24}
+              loader="default"
               priority
             />
           </a>
@@ -39,6 +40,7 @@ export default function Home() {
           alt="Next.js Logo"
           width={450}
           height={317}
+          loader="default"
           priority
         />
       </div>
