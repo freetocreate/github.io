@@ -7,8 +7,8 @@ exports.modules = {
 
 // Exports
 module.exports = {
-	"style": {"fontFamily":"'__Inter_0ec1f4', '__Inter_Fallback_0ec1f4'","fontStyle":"normal"},
-	"className": "__className_0ec1f4"
+	"style": {"fontFamily":"'__Inter_49cd42', '__Inter_Fallback_49cd42'","fontStyle":"normal"},
+	"className": "__className_49cd42"
 };
 
 
@@ -35,7 +35,7 @@ var _imageConfig = __webpack_require__(5843);
 var _imageConfigContext = __webpack_require__(744);
 var _warnOnce = __webpack_require__(618);
 var _imageLoader = _interop_require_default(__webpack_require__(9552));
-const configEnv = {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false};
+const configEnv = {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/github.io/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false};
 const allImgs = new Map();
 let perfObserver;
 if (true) {
