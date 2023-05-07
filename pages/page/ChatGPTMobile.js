@@ -107,7 +107,7 @@ function ChatGPTMobile() {
         marginBottom: '10px'}}>
           
         
-            {index % 2 === 0 &&<HeadIcon src={(index + 1) % 2 === 0 ? '/chatGPT2.png' : '/me.png'} alt="head icon" />}
+            {index % 2 === 0 &&<HeadIcon src={(index + 1) % 2 === 0 ? '/github.io/chatGPT2.png' : '/github.io/me.png'} alt="head icon" />}
           
           <div style={{ marginLeft: '10px' }}>
             <div
@@ -126,7 +126,7 @@ function ChatGPTMobile() {
             </div>
             
           </div>
-          {index % 2 === 1 &&<HeadIcon src={(index + 1) % 2 === 0 ? '/chatGPT2.jpg' : '/me.png'} alt="head icon" />}
+          {index % 2 === 1 &&<HeadIcon src={(index + 1) % 2 === 0 ? '/github.io/chatGPT2.jpg' : '/github.io/me.png'} alt="head icon" />}
         </li>
       ))}
     </ul>
