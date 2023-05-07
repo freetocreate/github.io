@@ -6,7 +6,7 @@ images: {
     loader: 'akamai',
     path: '',
   },
-  assetPrefix: './',
+  assetPrefix: './github.io',
   headers: async () => [
       {
         source: '/(.*)',
