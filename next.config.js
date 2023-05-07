@@ -6,17 +6,7 @@ images: {
     loader: 'akamai',
     path: '',
   },
-  headers: async () => [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Permissions-Policy',
-            value: 'interest-cohort=()',
-          },
-        ],
-      },
-    ]
+
 }
 
 module.exports = nextConfig
