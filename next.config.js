@@ -2,9 +2,9 @@
 
 const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
-  
 
-  assetPrefix: isProd ? '/github.io/' : '',
+
+  assetPrefix: isProd ? '/' : '',
   headers: async () => [
       {
         source: '/(.*)',
