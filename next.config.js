@@ -2,9 +2,11 @@
 
 const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
-
-
-  assetPrefix: isProd ? '/' : '',
+images: {
+    loader: 'akamai',
+    path: '',
+  },
+  assetPrefix: './',
   headers: async () => [
       {
         source: '/(.*)',
