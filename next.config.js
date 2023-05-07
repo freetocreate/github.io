@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
-images: {
-    loader: 'akamai',
-    path: '',
-  },
-
+  assetPrefix: '/github.io',
 }
 
 module.exports = nextConfig
