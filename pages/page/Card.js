@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({history}) => {
+const Card = (history) => {
   return (
     <div className="w-full rounded-lg shadow-lg my-4">
      
