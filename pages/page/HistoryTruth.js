@@ -50,8 +50,10 @@ function HistoryTruth() {
     }
     
   
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL; // Access the environment variable
+
     const instance = axios.create({
-      baseURL: 'https://freetoknow.pythonanywhere.com'
+      baseURL: baseURL
     });
     
   const handleGenerateNames = async (event,animal) => {

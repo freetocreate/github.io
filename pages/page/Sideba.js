@@ -45,6 +45,11 @@ const Sideba = ({ isOpen, onClose }) => {
             <div className="list-item">
               
               <MessageSquareIcon/><span>Story Create</span></div></Link></li>
+              <li><Link
+          href="/page/GptThree">
+            <div className="list-item">
+              
+              <MessageSquareIcon/><span>ChatGPT</span></div></Link></li>
           
           </ul>
         
