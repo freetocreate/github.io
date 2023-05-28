@@ -8,7 +8,7 @@ const Card = ({history}) => {
     <div className="w-full rounded-lg shadow-lg my-4">
      
       <div className="px-6 py-2">
-        <div className="font-bold text-black text-xl mb-2">{history.question}</div>
+        <div className="font-bold text-black text-xl mb-2"></div>
         <p className="text-gray-700 text-base">
           {history.answer}
         </p>
