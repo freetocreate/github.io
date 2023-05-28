@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Card = (history) => {
+const Card = ({history}) => {
+  if (!history) {
+    return null; // Render nothing if history is undefined
+  }
   return (
     <div className="w-full rounded-lg shadow-lg my-4">
      
