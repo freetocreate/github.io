@@ -15,7 +15,7 @@ const LoginModal = () => {
     setShowLoginModal(!showLoginModal);
   };
   const instance = axios.create({
-    baseURL: 'http://127.0.0.1:5000'
+    baseURL: "https://freetoknow.pythonanywhere.com"
   });
 
   const handleSubmit = async (e) => {
@@ -38,7 +38,6 @@ const LoginModal = () => {
       } else {
         // Login failed, display the error message
         setError(response.data.message);
-        console.log("good")
         console.log(response.data)
       }
     } catch (error) {

@@ -12,7 +12,7 @@ const Register = () => {
   const [phonenumber, setPhonenumber] = useState('');
   const [birthdate, setBirthdate] = useState('');
   const instance = axios.create({
-    baseURL: 'http://127.0.0.1:5000'
+    baseURL: "https://freetoknow.pythonanywhere.com"
   });
 
   const handleSubmit = async (e) => {

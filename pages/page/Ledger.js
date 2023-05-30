@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import { useRouter } from 'next/router';
 import 'react-datepicker/dist/react-datepicker.css';
 import { PlusIcon } from '@heroicons/react/solid';
-import { FaPizzaSlice, FaFootball, FaShoppingBag } from 'react-icons/fa';
+import { FaPizzaSlice, FaHome, FaShoppingBag } from 'react-icons/fa';
 
 import Calendar from './Calendar';
 import Link from 'next/link'
@@ -18,11 +18,13 @@ const Ledger = () => {
   const [activeItem, setActiveItem] = useState(1);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const datePickerRef = useRef(null);
+  const router = useRouter();
+  const { username } = router.query;
 
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL; // Access the environment variable
 
   const instance = axios.create({
-    baseURL: baseURL
+    baseURL: "https://freetoknow.pythonanywhere.com"
   });
 
   const handleDateChange = (date) => {
@@ -139,7 +141,8 @@ const Ledger = () => {
       <div className='fixed bottom-0 right-0 mr-4 mb-4'>
         <div className="h-12 w-12 rounded-full bg-red-500 flex items-center justify-center">
           <Link href={`/page/AcountInput?username=`} ><PlusIcon className="h-6 w-6 text-white" /></Link>
-        </div></div>
+        </div><div className="h-12 w-12 mt-1 rounded-full bg-green-500 flex items-center justify-center"><Link href={`/page/Profile?username=${username}`} className='text-sm'><FaHome className="h-6 w-6 text-white" />
+  </Link></div></div>
     </div>
   );
 };
