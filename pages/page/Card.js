@@ -20,6 +20,7 @@ const Card = ({ hist }) => {
 
         </div>
       </div>
+
   );
 };
 
