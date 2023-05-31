@@ -82,7 +82,7 @@ const Profile = () => {
         const response = await instance.get(`/api/history?membername=${username}`);
         const data = await response.data;
         if (data.success) {
-          const history = data.history;
+          const history = data.message;
           setHistoryData(history);
           // console.log('User:', user);
         } else {
@@ -130,8 +130,8 @@ const Profile = () => {
                 } transition-all duration-500 ease-in-out`} onClick={() => handleItemClick(3)}>About</li>
             </ul><hr />
             <div className="p-6" >
-              {historyData && historyData.map((history, index) => (
-                <Card key={index} history={historyData} />
+              {historyData && historyData.map((hist, index) => (
+                <Card key={index} hist={hist} />
               ))}
 
 
