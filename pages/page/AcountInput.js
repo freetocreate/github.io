@@ -22,7 +22,7 @@ const AcountInput = () => {
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL; // Access the environment variable
 
   const instance = axios.create({
-    baseURL: baseURL
+    baseURL: "https://freetoknow.pythonanywhere.com"
   });
   const handleDateChange = (date) => {
     setSelectedDate(date);

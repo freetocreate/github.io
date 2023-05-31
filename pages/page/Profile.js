@@ -7,13 +7,13 @@ import Link from 'next/link';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
-  const [historyData, setHistoryData] = useState(null);
+  const [historyData, setHistoryData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeItem, setActiveItem] = useState(1);
   const [usernamer, setUsernamer] = useState(null);
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL; // Access the environment variable
   const instance = axios.create({
-    baseURL: baseURL
+    baseURL: "https://freetoknow.pythonanywhere.com"
   });
   const router = useRouter();
   const { username } = router.query;
@@ -30,36 +30,46 @@ const Profile = () => {
       const response = await instance.get(`/api/picture?username=${username}`);
       const data = await response.data;
       if (data.success) {
-        const { success, url } = response.data;
+        const { success, url } = data;
         setProfileImageUrl(url);
       } else {
         console.log('picture not found font');
         const message = data.message; // Retrieve the error message
+        setProfileImageUrl('');
         console.log('Error message:', message);
       }
     } catch (error) {
       console.log('Error fetching profile picture:', error);
+      setProfileImageUrl('');
     }
   }
 
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
+        console.log(username)
         const response = await instance.get(`/api/user?username=${username}`);
         const data = await response.data;
+        console.log(data)
         if (data.success) {
-          const user = data.user;
-          setProfileData(user);
-          setUsernamer(profileData.username)
-          console.log('User:', user); console.log('Usersssssss:', profileData.username);
+          const user_data = data.message;
+          setProfileData(user_data);
+          console.log('User:', user_data);
+          console.log('Usersssssss:', profileData);
         } else {
           console.log('user not found font');
           const message = data.message; // Retrieve the error message
+          setProfileData(null);
           console.log('Error message:', message);
+
         }
         setIsLoading(false);
       } catch (error) {
         console.log('Error fetching profile data:', error);
+        console.log('9999999999')
+        setIsLoading(false);
+        setProfileData(null); // Set profileData to null in case of any error
+
       }
     };
 
@@ -72,17 +82,21 @@ const Profile = () => {
         const response = await instance.get(`/api/history?membername=${username}`);
         const data = await response.data;
         if (data.success) {
-          const history = data.history;
+          const history = data.message;
           setHistoryData(history);
           // console.log('User:', user);
         } else {
           console.log('History not found');
           const message = data.message; // Retrieve the error message
+          setHistoryData([]);
           console.log('Error message:', message);
+
         }
         setIsLoading(false);
       } catch (error) {
         console.log('Error fetching profile data:', error);
+        setHistoryData([]);
+        setIsLoading(false);
       }
     };
 
@@ -116,8 +130,8 @@ const Profile = () => {
                 } transition-all duration-500 ease-in-out`} onClick={() => handleItemClick(3)}>About</li>
             </ul><hr />
             <div className="p-6" >
-              {historyData && historyData.map((history, index) => (
-                <Card key={index} history={history} />
+              {historyData && historyData.map((hist, index) => (
+                <Card key={index} hist={hist} />
               ))}
 
 
@@ -172,10 +186,10 @@ const Profile = () => {
 
       </div> <div className="bg-white col-span-1 p-8 relative">
         {/* <HeadIcon src={'/chatGPT.jpg'} alt="head icon" /> */}
-        {profileImageUrl && <img
-          src={profileImageUrl} alt="Profile Picture"
+        <img
+          src={profileImageUrl ? profileImageUrl : 'girl1.jpg'} alt="Profile Picture"
           className="rounded-full h-32 w-32 m-8"
-        />}
+        />
         <h2 className="username text-2xl font-semibold text-black ml-8  font-sans">{profileData.username}</h2>
         <p className='text-base font-medium text-[#6e6d6e]  ml-8 '>Every thing has been happened</p>
         <p className='text-base font-medium text-[#059c6a] m-8 '><Link href={`/page/FileUpload?username=${profileData.username}`}>Edit Profile</Link></p>
