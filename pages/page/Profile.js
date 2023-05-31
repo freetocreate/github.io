@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
-  const [historyData, setHistoryData] = useState(null);
+  const [historyData, setHistoryData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeItem, setActiveItem] = useState(1);
   const [usernamer, setUsernamer] = useState(null);
@@ -88,14 +88,14 @@ const Profile = () => {
         } else {
           console.log('History not found');
           const message = data.message; // Retrieve the error message
-          setHistoryData(null);
+          setHistoryData([]);
           console.log('Error message:', message);
 
         }
         setIsLoading(false);
       } catch (error) {
         console.log('Error fetching profile data:', error);
-        setHistoryData(null);
+        setHistoryData([]);
         setIsLoading(false);
       }
     };
@@ -131,7 +131,7 @@ const Profile = () => {
             </ul><hr />
             <div className="p-6" >
               {historyData && historyData.map((history, index) => (
-                <Card key={index} history={history} />
+                <Card key={index} history={historyData} />
               ))}
 
 
