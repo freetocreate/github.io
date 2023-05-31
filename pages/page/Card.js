@@ -5,7 +5,8 @@ const Card = ({history}) => {
     return null; // Render nothing if history is undefined
   }
   return (
-    <div className="w-full rounded-lg shadow-lg my-4">
+    <>
+    {history&&<div className="w-full rounded-lg shadow-lg my-4">
      
       <div className="px-6 py-2">
         <div className="font-bold text-black text-xl mb-2"></div>
@@ -19,7 +20,7 @@ const Card = ({history}) => {
         </span>
         
       </div>
-    </div>
+    </div>}</>
   );
 };
 
